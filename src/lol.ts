@@ -1,44 +1,42 @@
-let val1:number=0
-let val2:number=0
-let operacion:string=""
+let val1: number = 0;
+let val2: number = 0;
+let operacion: string = "";
 
-const division =(val1:number,val2:number):number|string=>{
-    if(val2==0)
-        return "error matematico"
-    else
-        return val1/val2
-}
+const division = (val1: number, val2: number): number | string => {
+    if (val2 == 0) return "error matematico";
+    else return val1 / val2;
+};
 
-const multiplicacion =(val1:number,val2:number):number=>{
-    return val1*val2
-}
+const multiplicacion = (val1: number, val2: number): number => {
+    return val1 * val2;
+};
 
-const suma =(val1:number,val2:number):number=>{
-    return val1+val2
-}
+const suma = (val1: number, val2: number): number => {
+    return val1 + val2;
+};
 
-const resta =(val1:number,val2:number):number=>{
-    return val1-val2
-}
+const resta = (val1: number, val2: number): number => {
+    return val1 - val2;
+};
 
-const agregaValores = (valor:string)=>{
-    const cajaTex = document.getElementById("cajaTexto") as HTMLInputElement
-    cajaTex.value+=valor
-}
+const agregaValores = (valor: string) => {
+    const cajaTex = document.getElementById("cajaTexto") as HTMLInputElement;
+    cajaTex.value += valor;
+};
 
 const limpiarPantalla = () => {
-    const pantalla = document.getElementById("cajaTexto") as HTMLInputElement
-    pantalla.value = ""
-    val1 = 0
-    val2 = 0
-    operacion = ""
+    const pantalla = document.getElementById("cajaTexto") as HTMLInputElement;
+    pantalla.value = "";
+    val1 = 0;
+    val2 = 0;
+    operacion = "";
 };
 
 const ponerOp = (op: string) => {
-    const pantalla = document.getElementById("cajaTexto") as HTMLInputElement
-    val1 = parseFloat(pantalla.value)
-    operacion = op
-    pantalla.value = ""
+    const pantalla = document.getElementById("cajaTexto") as HTMLInputElement;
+    val1 = parseFloat(pantalla.value);
+    operacion = op;
+    pantalla.value = "";
 };
 
 const calcular = () => {
@@ -62,5 +60,10 @@ const calcular = () => {
         default:
             result = "error 404";
     }
-    display.value = result.toString(); 
+    display.value = result.toString();
 };
+
+(window as any).agregaValores = agregaValores;
+(window as any).limpiarPantalla = limpiarPantalla;
+(window as any).ponerOp = ponerOp;
+(window as any).calcular = calcular;

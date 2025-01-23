@@ -56,3 +56,7 @@ const calcular = () => {
     }
     display.value = result.toString();
 };
+window.agregaValores = agregaValores;
+window.limpiarPantalla = limpiarPantalla;
+window.ponerOp = ponerOp;
+window.calcular = calcular;
